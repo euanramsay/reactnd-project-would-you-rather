@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
-class Dashboard extends Component {
+class Hello extends Component {
 
   render() {
     return (
       <div>
-        DASHBOARD
+        HELLO WORLD!
       </div>
     )
   }
 }
 
-export default connect()(Dashboard)
+export default connect()(Hello)
