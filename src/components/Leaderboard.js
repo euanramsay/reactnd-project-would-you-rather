@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-class Dashboard extends Component {
+class Leaderboard extends Component {
 
   render() {
     return (
       <div>
-        DASHBOARD
+        LEADERBOARD!
       </div>
     )
   }
 }
 
-export default connect()(Dashboard)
+export default connect()(Leaderboard)

@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-class Dashboard extends Component {
+class NewQuestion extends Component {
 
   render() {
     return (
       <div>
-        DASHBOARD
+        NEW QUESTION
       </div>
     )
   }
 }
 
-export default connect()(Dashboard)
+export default connect()(NewQuestion)

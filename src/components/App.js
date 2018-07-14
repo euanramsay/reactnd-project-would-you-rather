@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
-import Hello from './Hello'
+import SignIn from './SignIn'
+import NewQuestion from './NewQuestion'
+import Leaderboard from './Leaderboard'
 
 class App extends Component {
   componentDidMount() {
@@ -12,15 +14,17 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
         <Fragment>
           <LoadingBar />
           <div className='container'>
-            <Route exact path='/' component={Dashboard}/>
-            <Route path='/hello' component={Hello}/>
+            <Switch>
+              <Route exact path='/' component={Dashboard} />
+              <Route path='/signIn' component={SignIn} />
+              <Route exact path='/new' component={NewQuestion} />
+              <Route exact path='/leaderboard' component={Leaderboard} />
+            </Switch>
           </div>
         </Fragment>
-      </Router>
     )
   }
 }

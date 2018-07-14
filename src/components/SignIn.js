@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-class Dashboard extends Component {
+class SignIn extends Component {
 
   render() {
     return (
       <div>
-        DASHBOARD
+        SIGN IN!
       </div>
     )
   }
 }
 
-export default connect()(Dashboard)
+export default connect()(SignIn)
