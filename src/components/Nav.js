@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import User from './User'
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
+import { setAuthedUser } from '../actions/authedUser';
 
 class Nav extends Component {
 
@@ -34,8 +35,8 @@ class Nav extends Component {
                 ? <User id={authedUser}/>
                 : null } 
             { authedUser 
-            ? <Button color="inherit">
-                <NavLink to='/' activeClassName='active' >
+            ? <Button color="inherit" onClick="resetAuthedUser" >
+                <NavLink to='/' activeClassName='active'>
                     Sign Out
                 </NavLink>
             </Button>
@@ -52,4 +53,10 @@ function mapStateToProps ({ authedUser }) {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Nav))
+function mapDispatchToProps(dispatch) {
+    return({
+        resetAuthedUser: () => {dispatch(setAuthedUser(null))}
+    })
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav))

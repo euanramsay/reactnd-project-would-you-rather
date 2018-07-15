@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
-import SignIn from './SignIn';
-import Nav from './Nav'
+import SignIn from './SignIn'
 
 class Dashboard extends Component {
 
@@ -12,7 +11,6 @@ class Dashboard extends Component {
 
     return (
       <div>
-        <Nav />
         {
           authedUser
           ? <div>
