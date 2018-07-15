@@ -12,15 +12,13 @@ class SignIn extends Component {
 	handleLogin = (id) => {
 		const { dispatch } = this.props;
 		dispatch(setAuthedUser(id))
-		this.props.history.push('/')
 	}
 
 	render(){
 		return (
 			<div >
-				<h2>Login</h2>
 				<Card>
-					<CardHeader title='Please login to continue' />
+					<CardHeader title='Please Sign In' />
 					<List>
 			          {this.props.userIds.map((id) => (
 			          	  <div 

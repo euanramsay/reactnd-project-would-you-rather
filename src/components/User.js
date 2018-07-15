@@ -7,13 +7,18 @@ import ListItem from '@material-ui/core/ListItem';
 
 class User extends Component {
 	render(){
-		const { classes, user } = this.props;
+		const { user } = this.props
+
+		const {
+      name, avatarURL
+    } = user
+
 		return (
-			<ListItem >
-	          <Avatar alt={user.name} src={user.avatarURL} />
-	          <ListItemText primary={user.name} />
-	        </ListItem>
-        )
+				<ListItem >
+	          <Avatar alt={name} src={avatarURL} />
+	          <ListItemText primary={name} />
+	      </ListItem>
+      )
 	}
 }
 
