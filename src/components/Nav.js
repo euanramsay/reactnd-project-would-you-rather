@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
 import User from './User'
@@ -59,4 +59,4 @@ function mapDispatchToProps(dispatch) {
     })
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav))
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)
