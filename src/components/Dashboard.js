@@ -7,7 +7,7 @@ class Dashboard extends Component {
 
   render() {
 
-    const { authedUser, questionIds } = this.props
+    const { authedUser, questionIds, users } = this.props
 
     return (
       <div>
@@ -16,7 +16,7 @@ class Dashboard extends Component {
           ? <div>
               <h3 className='center'>Questions</h3>
               <ul className='dashboard-list'>
-                {questionIds.map((id) => (
+                {Object.keys(users[authedUser]["answers"]).map((id) => (
                   <li key={id}>
                     <Question id={id}/>
                   </li>
@@ -32,11 +32,12 @@ class Dashboard extends Component {
   }
 }
 
-function mapStateToProps ({ questions, authedUser }) {
+function mapStateToProps ({ questions, authedUser, users }) {
   return {
     questionIds: Object.keys(questions)
       .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
-    authedUser
+    authedUser,
+    users
   }
 }
 
