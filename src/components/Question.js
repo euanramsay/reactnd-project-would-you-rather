@@ -1,45 +1,52 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
+import User from './User'
 
 class Question extends Component {
-  render() {
+  render () {
     const { question, user } = this.props
-    
+
     if (question === null) {
       return <p>This Question doesn't exist</p>
     }
 
-    const {
-      name, avatarURL
-    } = user
-
-    const {
-      optionOne, optionTwo
-    } = question
+    const { optionOne, optionTwo } = question
 
     return (
-      <div className='question'>
-        <img
-          src={avatarURL}
-          alt={`Avatar of ${name}`}
-          className='avatar'
-        />
-        <p>{optionOne.text}</p>
-        <h3> OR </h3>
-        <p>{optionTwo.text}</p>
-      </div>
+      <Card className='question'>
+        <User id={user.id} />
+        <CardHeader title='Would you rather?' />
+        <CardContent>
+          <CardActions>
+            <Button size='small' color='primary'>
+              {optionOne.text}
+            </Button>
+            <Typography variant='headline'>
+              OR
+            </Typography>
+            <Button size='small' color='primary'>
+              {optionTwo.text}
+            </Button>
+          </CardActions>
+        </CardContent>
+      </Card>
     )
   }
 }
 
-function mapStateToProps ({ authedUser, users, questions }, { id }) {
+function mapStateToProps ({ users, questions }, { id }) {
   const question = questions[id]
   const user = users[question.author]
 
   return {
-    authedUser,
     question,
-    user: user,
+    user
   }
 }
 

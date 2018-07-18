@@ -6,7 +6,7 @@ class Leaderboard extends Component {
   render() {
     return (
       <div>
-        LEADERBOARD!
+        LEADERBOARD
       </div>
     )
   }
