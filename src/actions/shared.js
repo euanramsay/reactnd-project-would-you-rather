@@ -1,6 +1,10 @@
-import { getInitialData, saveQuestionAnswer } from '../utils/api'
+import { getInitialData, saveQuestionAnswer, saveQuestion } from '../utils/api'
 import { receiveUsers } from '../actions/users'
-import { receiveQuestions, answerQuestion } from '../actions/questions'
+import {
+  receiveQuestions,
+  answerQuestion,
+  addNewQuestion
+} from '../actions/questions'
 import { setAuthedUser } from '../actions/authedUser'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
@@ -23,6 +27,20 @@ export const handleAnswerQuestion = (qid, answer) => (dispatch, getState) => {
   }
   dispatch(showLoading())
   dispatch(answerQuestion(questionData))
-
   return saveQuestionAnswer(questionData).then(() => dispatch(hideLoading()))
+}
+
+export const handleAddNewQuestion = (optionOneText, optionTwoText) => (
+  dispatch,
+  getState
+) => {
+  const { authedUser } = getState()
+  dispatch(showLoading())
+  return saveQuestion({
+    author: authedUser,
+    optionOneText,
+    optionTwoText
+  })
+    .then(question => dispatch(addNewQuestion(question)))
+    .then(() => dispatch(hideLoading()))
 }

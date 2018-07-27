@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import AppBar from '@material-ui/core/AppBar'
+import { AppBar, Toolbar, Button } from '@material-ui/core'
 import User from './User'
-import Toolbar from '@material-ui/core/Toolbar'
-import Button from '@material-ui/core/Button'
 import { setAuthedUser } from '../actions/authedUser'
 
 class Nav extends Component {

@@ -1,42 +1,81 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import TextField from '@material-ui/core/TextField'
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Button,
+  Typography,
+  TextField
+} from '@material-ui/core'
+import { handleAddNewQuestion } from '../actions/shared'
 
 class NewQuestion extends Component {
+  state = {
+    optionOne: '',
+    optionTwo: ''
+  }
 
-  render() {
+  handleOptionOneChange = optionOne => event => {
+    this.setState({
+      [optionOne]: event.target.value
+    })
+  }
+
+  handleOptionTwoChange = optionTwo => event => {
+    this.setState({
+      [optionTwo]: event.target.value
+    })
+  }
+
+  handleNewQuestion = () => {
+    const { dispatch } = this.props
+    const { optionOne, optionTwo } = this.state
+    dispatch(handleAddNewQuestion(optionOne, optionTwo))
+    this.setState(() =>({
+      optionOne: '',
+      optionTwo: ''
+    }))
+    console.log(this.state)
+  }
+
+  render () {
+    console.log(this.state)
     return (
       <div>
         <h3 className='center'>Add a new question</h3>
         <Card className='question'>
-        <CardContent>
-          <CardActions>
-          <TextField
+          <CardContent>
+            <CardActions>
+              <TextField
                 id='with-placeholder'
                 label='This'
-                placeholder='Placeholder'
+                placeholder='Option One'
                 margin='normal'
+                value={this.state.optionOne}
+                onChange={this.handleOptionOneChange('optionOne')}
               />
-            <Typography variant='headline'>
-              OR
-            </Typography>
-            <TextField
+              <Typography variant='headline'>
+                OR
+              </Typography>
+              <TextField
                 id='with-placeholder'
                 label='That'
-                placeholder='Placeholder'
+                placeholder='Option Two'
                 margin='normal'
+                value={this.state.optionTwo}
+                onChange={this.handleOptionTwoChange('optionTwo')}
               />
-            <Button size='small' color='primary'>
-              Submit
-            </Button>
-          </CardActions>
-        </CardContent>
-      </Card>
+              <Button
+                size='small'
+                color='primary'
+                onClick={() => this.handleNewQuestion()}
+              >
+                Submit
+              </Button>
+            </CardActions>
+          </CardContent>
+        </Card>
       </div>
     )
   }

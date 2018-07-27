@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import {
   Typography,
   Card,
-  Avatar,
   CardContent
 } from '../../node_modules/@material-ui/core'
 
@@ -19,9 +18,10 @@ class Score extends Component {
         <CardContent>
           <Typography>Questions Answered: {questionsAnswered}</Typography>
           <Typography>Questions Asked: {questionsAsked}</Typography>
-          <Typography variant="display3">Score: {questionsAnswered + questionsAsked}</Typography>
+          <Typography variant='display3'>
+            Score: {questionsAnswered + questionsAsked}
+          </Typography>
         </CardContent>
-        
       </Card>
     )
   }
