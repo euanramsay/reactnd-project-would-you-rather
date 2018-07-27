@@ -2,7 +2,7 @@
 
 This is a React-Redux web app for the Udacity React Nanodegree course. It is a game where users can select an option of would they rather do one thing or another. Users can also create their own questions.
 
-This is the first project in the Udacity React Nanodegree.
+This is the second project in the Udacity React Nanodegree.
 
 ## Running and developing on the project
 
