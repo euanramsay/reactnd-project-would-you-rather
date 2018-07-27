@@ -1,19 +1,20 @@
 # Would You Rather Project
 
-This is a React-Redux web app I have build for the Udacity React Nanodegree course. It is a game where users can select an option of would they rather do one thing or another. Users can alos create there own questions.
+This is a React-Redux web app for the Udacity React Nanodegree course. It is a game where users can select an option of would they rather do one thing or another. Users can also create their own questions.
 
 This is the first project in the Udacity React Nanodegree.
 
 ## Running and developing on the project
 
-Using npm:
+### Using npm:
 
-install all project dependencies with npm install
+Install all project dependencies with npm install
 start the development server with npm start
 to create a production bundle, use npm run build
-Using Yarn:
 
-install all project dependencies with yarn install
+### Using Yarn:
+
+Install all project dependencies with yarn install
 start the development server with yarn start
 to create a production bundle, use yarn build
 
