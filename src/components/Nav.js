@@ -10,10 +10,8 @@ class Nav extends Component {
     const { dispatch } = this.props
     dispatch(setAuthedUser(null))
   }
-
   render () {
     const { authedUser } = this.props
-
     return (
       <AppBar position='static'>
         <Toolbar>

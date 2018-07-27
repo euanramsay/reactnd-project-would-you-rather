@@ -2,12 +2,12 @@ import React, { Component, Fragment } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
-import { handleInitialData } from '../actions/shared'
 import Nav from './Nav'
 import Dashboard from './Dashboard'
 import SignIn from './SignIn'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
+import { handleInitialData } from '../actions/shared'
 
 class App extends Component {
   componentDidMount() {

@@ -21,30 +21,25 @@ class NewQuestion extends Component {
       [optionOne]: event.target.value
     })
   }
-
   handleOptionTwoChange = optionTwo => event => {
     this.setState({
       [optionTwo]: event.target.value
     })
   }
-
   handleNewQuestion = () => {
     const { dispatch } = this.props
     const { optionOne, optionTwo } = this.state
     dispatch(handleAddNewQuestion(optionOne, optionTwo))
-    this.setState(() =>({
+    this.setState(() => ({
       optionOne: '',
       optionTwo: ''
     }))
-    console.log(this.state)
   }
-
   render () {
-    console.log(this.state)
     return (
       <div>
         <h3 className='center'>Add a new question</h3>
-        <Card className='question'>
+        <Card className='card'>
           <CardContent>
             <CardActions>
               <TextField

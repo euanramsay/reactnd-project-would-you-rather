@@ -11,7 +11,7 @@ class Leaderboard extends Component {
       <Fragment>
         <h3 className='center'>Leaderboard</h3>
         {userIds.map(id => (
-          <Card key={id} id={id} className='question'>
+          <Card key={id} id={id} className='small-card'>
             <CardContent>
               <User key={id} id={id} />
               <Score id={id} />

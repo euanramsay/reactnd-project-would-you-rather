@@ -10,11 +10,9 @@ import {
 class User extends Component {
   render () {
     const { user } = this.props
-
     const { name, avatarURL } = user
-
     return (
-      <Card>
+      <Card className='user-card'>
         <CardContent>
           <Avatar alt={name} src={avatarURL} />
           <Typography>{name}</Typography>

@@ -12,7 +12,6 @@ class Score extends Component {
     const { answers, questions } = user
     const questionsAnswered = Object.keys(answers).length
     const questionsAsked = questions.length
-
     return (
       <Card>
         <CardContent>

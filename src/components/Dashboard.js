@@ -12,7 +12,6 @@ class Dashboard extends Component {
     const unansweredQuestions = questionIds.filter(
       id => !answeredQuestions.find(aId => id === aId)
     )
-
     return (
       <div>
         {authedUser
@@ -21,7 +20,7 @@ class Dashboard extends Component {
               {unansweredQuestions !== []
                   ? <h3 className='center'>Uanswered Questions</h3>
                   : null}
-              <ul className='dashboard-list'>
+              <ul>
                 {unansweredQuestions.map(id => (
                   <li key={id}>
                     <Question id={id} />
@@ -31,7 +30,7 @@ class Dashboard extends Component {
             </div>
             <div>
               <h3 className='center'>Answered Questions</h3>
-              <ul className='dashboard-list'>
+              <ul>
                 {answeredQuestions.map(id => (
                   <li key={id}>
                     <Question id={id} />
