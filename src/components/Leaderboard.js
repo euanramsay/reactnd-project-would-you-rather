@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import User from './User'
+import Score from './Score'
 
 class Leaderboard extends Component {
   render () {
@@ -11,9 +12,10 @@ class Leaderboard extends Component {
       <Fragment>
         <h3 className='center'>Leaderboard</h3>
         {userIds.map(id => (
-          <Card id={id} className='question'>
+          <Card key={id} id={id} className='question'>
             <CardContent>
-              <User id={id} />
+              <User key={id} id={id} />
+              <Score id={id} />
             </CardContent>
           </Card>
         ))}

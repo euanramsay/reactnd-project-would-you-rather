@@ -1,25 +1,30 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import Avatar from "@material-ui/core/Avatar"
-import ListItemText from "@material-ui/core/ListItemText"
-import ListItem from "@material-ui/core/ListItem"
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import {
+  Typography,
+  Card,
+  Avatar,
+  CardContent
+} from '../../node_modules/@material-ui/core'
 
 class User extends Component {
-  render() {
-    const { user } = this.props;
+  render () {
+    const { user } = this.props
 
-    const { name, avatarURL } = user;
+    const { name, avatarURL } = user
 
     return (
-      <ListItem>
-        <Avatar alt={name} src={avatarURL} />
-        <ListItemText primary={name} />
-      </ListItem>
-    );
+      <Card>
+        <CardContent>
+          <Avatar alt={name} src={avatarURL} />
+          <Typography>{name}</Typography>
+        </CardContent>
+      </Card>
+    )
   }
 }
 
-function mapStateToProps({ users }, { id }) {
+function mapStateToProps ({ users }, { id }) {
   const user = users[id]
   return {
     user

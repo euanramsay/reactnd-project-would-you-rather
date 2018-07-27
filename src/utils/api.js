@@ -14,6 +14,6 @@ export const saveQuestion = (question) => {
   return _saveQuestion(question);
 };
 
-export const saveVote = (vote) => {
-  return _saveQuestionAnswer(vote);
+export const saveQuestionAnswer = (answer) => {
+  return _saveQuestionAnswer(answer);
 }
