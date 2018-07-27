@@ -6,17 +6,17 @@ This is the first project in the Udacity React Nanodegree.
 
 ## Running and developing on the project
 
-### Using npm:
+Using npm:
 
-Install all project dependencies with npm install
-start the development server with npm start
-to create a production bundle, use npm run build
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
+* to create a production bundle, use `npm run build`
 
-### Using Yarn:
+Using Yarn:
 
-Install all project dependencies with yarn install
-start the development server with yarn start
-to create a production bundle, use yarn build
+* Install all project dependencies with `yarn install`
+* start the development server with `yarn start`
+* to create a production bundle, use `yarn build`
 
 ## Data
 
