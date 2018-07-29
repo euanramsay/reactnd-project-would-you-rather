@@ -41,6 +41,7 @@ class NewQuestion extends Component {
         <h3 className='center'>Add a new question</h3>
         <Card className='card'>
           <CardContent>
+            <Typography variant='display1'>Would you rather...</Typography>
             <CardActions>
               <TextField
                 id='with-placeholder'
@@ -50,7 +51,7 @@ class NewQuestion extends Component {
                 value={this.state.optionOne}
                 onChange={this.handleOptionOneChange('optionOne')}
               />
-              <Typography variant='headline'>
+              <Typography variant='title' className='or-text'>
                 OR
               </Typography>
               <TextField

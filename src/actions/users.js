@@ -1,5 +1,4 @@
-export const RECEIVE_USERS = "RECEIVE_USERS"
-export const ANSWER_QUESTION = "ANSWER_QUESTION"
+import { RECEIVE_USERS, ANSWER_QUESTION } from './types'
 
 export function receiveUsers(users) {
   return {

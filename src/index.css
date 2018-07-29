@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   color: #252525;
-  background-color: gainsboro
+  background-color: gainsboro;
 }
 
 a {
@@ -40,6 +40,10 @@ li {
   border: 1px solid #dad7d7;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.or-text {
+  padding: 20px;
 }
 
 .small-card {

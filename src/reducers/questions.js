@@ -2,7 +2,7 @@ import {
   RECEIVE_QUESTIONS,
   ADD_NEW_QUESTION,
   ANSWER_QUESTION
-} from '../actions/questions'
+} from '../actions/types'
 
 export default function questions (state = {}, action) {
   switch (action.type) {
