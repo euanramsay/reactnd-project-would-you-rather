@@ -7,6 +7,7 @@ import Dashboard from './Dashboard'
 import SignIn from './SignIn'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
+import PrivateRoute from './PrivateRoute'
 import { handleInitialData } from '../actions/shared'
 
 class App extends Component {
@@ -24,9 +25,9 @@ class App extends Component {
             <Nav />
             <Switch>
               <Route exact path='/' component={Dashboard} />
-              <Route path='/signIn' component={SignIn} />
-              <Route path='/new' component={NewQuestion} />
-              <Route path='/leaderboard' component={Leaderboard} />
+              <PrivateRoute path='/add' component={NewQuestion} />
+              <PrivateRoute path='/leaderboard' component={Leaderboard} />
+              <PrivateRoute path='/questions/:question_id' component={QuestionPage} />
               <Route path='/signin' component={SignIn} />
             </Switch>
           </Fragment>
