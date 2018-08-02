@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { AppBar, Toolbar, Button } from '@material-ui/core'
-import User from './User'
+import { AppBar, Toolbar, Button, Avatar, Typography } from '@material-ui/core'
 import { setAuthedUser } from '../actions/authedUser'
 
 class Nav extends Component {
@@ -11,7 +10,7 @@ class Nav extends Component {
     dispatch(setAuthedUser(null))
   }
   render () {
-    const { authedUser } = this.props
+    const { authedUser, user } = this.props
     return (
       <AppBar position='static'>
         <Toolbar>
@@ -30,9 +29,14 @@ class Nav extends Component {
               Leaderboard
             </NavLink>
           </Button>
-          {authedUser ? <User id={authedUser} /> : null}
           {authedUser
-            ? <Button color='inherit' onClick={() => this.handleSignOut()}>
+            ? <Fragment>
+              <Avatar className='avatar' alt={user.name} src={user.avatarURL} />
+              <Typography>{user.name}</Typography>
+            </Fragment>
+            : null}
+          {authedUser
+            ? <Button className='sign-out' color='inherit' onClick={() => this.handleSignOut()}>
               <NavLink to='/' activeClassName='active'>
                   Sign Out
                 </NavLink>
@@ -44,9 +48,10 @@ class Nav extends Component {
   }
 }
 
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps ({ authedUser, users }) {
   return {
-    authedUser: authedUser
+    authedUser,
+    user: users[authedUser]
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { List, Card, CardHeader } from '@material-ui/core'
+import { List, Card, CardHeader, Divider } from '@material-ui/core'
 import User from './User'
 import { setAuthedUser } from '../actions/authedUser'
 
@@ -18,6 +18,7 @@ class SignIn extends Component {
           {userIds.map(id => (
             <div key={id} onClick={() => this.handleLogin(id)}>
               <User id={id} />
+              <Divider />
             </div>
           ))}
         </List>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import {
   Typography,
@@ -13,7 +13,7 @@ class Score extends Component {
     const questionsAnswered = Object.keys(answers).length
     const questionsAsked = questions.length
     return (
-      <Card>
+      <Fragment>
         <CardContent>
           <Typography>Questions Answered: {questionsAnswered}</Typography>
           <Typography>Questions Asked: {questionsAsked}</Typography>
@@ -21,7 +21,7 @@ class Score extends Component {
             Score: {questionsAnswered + questionsAsked}
           </Typography>
         </CardContent>
-      </Card>
+      </Fragment>
     )
   }
 }

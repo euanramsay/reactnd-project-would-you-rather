@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import {
   Typography,
@@ -11,12 +11,12 @@ class User extends Component {
   render () {
     const { name, avatarURL } = this.props.user
     return (
-      <Card className='user-card'>
+      <Fragment className='user-card'>
         <CardContent>
-          <Avatar alt={name} src={avatarURL} />
-          <Typography>{name}</Typography>
+          <Avatar className='avatar' alt={name} src={avatarURL} />
+          <Typography className='user-name'>{name}</Typography>
         </CardContent>
-      </Card>
+      </Fragment>
     )
   }
 }

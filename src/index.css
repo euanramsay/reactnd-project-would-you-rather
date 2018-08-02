@@ -21,6 +21,10 @@ li {
   text-decoration: none;
 }
 
+.avatar {
+  padding: 20px;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -63,4 +67,8 @@ li {
   padding: 5px;
   margin: 0 auto;
   cursor: pointer;
+}
+
+.user-name {
+  min-width: 100px;
 }
