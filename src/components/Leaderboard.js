@@ -9,23 +9,17 @@ class Leaderboard extends Component {
   render () {
     const { userIds, authedUser } = this.props
     return (
-      <div>
-        {authedUser
-          ? <Fragment>
-            <h3 className='center'>Leaderboard</h3>
-            {userIds.map(id => (
-              <Card key={id} id={id} className='small-card'>
-                <CardContent>
-                  <User key={id} id={id} />
-                  <Score id={id} />
-                </CardContent>
-              </Card>
-              ))}
-          </Fragment>
-          : <div>
-            <SignIn />
-          </div>}
-      </div>
+      <Fragment>
+        <h3 className='center'>Leaderboard</h3>
+        {userIds.map(id => (
+          <Card key={id} id={id} className='small-card'>
+            <CardContent>
+              <User key={id} id={id} />
+              <Score id={id} />
+            </CardContent>
+          </Card>
+        ))}
+      </Fragment>
     )
   }
 }

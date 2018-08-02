@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import {
   Card,
   CardHeader,
@@ -12,37 +13,21 @@ import User from './User'
 import { handleAnswerQuestion } from '../actions/shared'
 
 class Question extends Component {
-  handleOptionOne = () => {
-    const { dispatch, question } = this.props
-    dispatch(handleAnswerQuestion(question.id, 'optionOne'))
-  }
-  handleOptionTwo = () => {
-    const { dispatch, question } = this.props
-    dispatch(handleAnswerQuestion(question.id, 'optionTwo'))
-  }
   render () {
     const { question, user } = this.props
-    const { optionOne, optionTwo } = question
+    const { optionOne } = question
+    const link = `/questions/${question.id}`
     return (
       <Card className='card'>
         <User id={user.id} />
         <CardHeader title='Would you rather?' />
         <CardContent>
+          <Typography>...{optionOne.text}...</Typography>
           <CardActions>
-            <Button
-              size='small'
-              color='primary'
-              onClick={() => this.handleOptionOne()}
-            >
-              {optionOne.text}
-            </Button>
-            <Typography variant='headline'>OR</Typography>
-            <Button
-              size='small'
-              color='primary'
-              onClick={() => this.handleOptionTwo()}
-            >
-              {optionTwo.text}
+            <Button size='small' color='primary'>
+              <NavLink to={link} exact activeClassName='active'>
+                View Poll
+              </NavLink>
             </Button>
           </CardActions>
         </CardContent>

@@ -8,6 +8,7 @@ import SignIn from './SignIn'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
 import PrivateRoute from './PrivateRoute'
+import QuestionPage from './QuestionPage'
 import { handleInitialData } from '../actions/shared'
 
 class App extends Component {
