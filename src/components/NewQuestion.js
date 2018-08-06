@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router'
 import {
   Card,
   CardActions,
@@ -13,7 +14,8 @@ import { handleAddNewQuestion } from '../actions/shared'
 class NewQuestion extends Component {
   state = {
     optionOne: '',
-    optionTwo: ''
+    optionTwo: '',
+    toHome: false
   }
 
   handleOptionOneChange = optionOne => event => {
@@ -32,10 +34,16 @@ class NewQuestion extends Component {
     dispatch(handleAddNewQuestion(optionOne, optionTwo))
     this.setState(() => ({
       optionOne: '',
-      optionTwo: ''
+      optionTwo: '',
+      toHome: true
     }))
   }
   render () {
+    const { toHome } = this.state
+    // Reference: https://tylermcginnis.com/react-router-programmatically-navigate/
+    if (toHome === true) {
+      return <Redirect to='/' />
+    }
     return (
       <div>
         <h3 className='center'>Add a new question</h3>
@@ -63,8 +71,7 @@ class NewQuestion extends Component {
                 onChange={this.handleOptionTwoChange('optionTwo')}
               />
               <Button
-                size='small'
-                color='primary'
+                variant='contained'
                 onClick={() => this.handleNewQuestion()}
               >
                 Submit

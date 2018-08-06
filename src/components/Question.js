@@ -3,14 +3,12 @@ import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import {
   Card,
-  CardHeader,
   CardActions,
   CardContent,
   Button,
   Typography
 } from '@material-ui/core'
 import User from './User'
-import { handleAnswerQuestion } from '../actions/shared'
 
 class Question extends Component {
   render () {
@@ -20,11 +18,11 @@ class Question extends Component {
     return (
       <Card className='card'>
         <User id={user.id} />
-        <CardHeader title='Would you rather?' />
         <CardContent>
+          <Typography variant='display1'>Would you rather?</Typography>
           <Typography>...{optionOne.text}...</Typography>
           <CardActions>
-            <Button size='small' color='primary'>
+            <Button variant='contained'>
               <NavLink to={link} exact activeClassName='active'>
                 View Poll
               </NavLink>

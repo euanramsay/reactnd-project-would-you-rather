@@ -3,11 +3,10 @@ import { connect } from 'react-redux'
 import { Card, CardContent } from '@material-ui/core'
 import User from './User'
 import Score from './Score'
-import SignIn from './SignIn'
 
 class Leaderboard extends Component {
   render () {
-    const { userIds, authedUser } = this.props
+    const { userIds } = this.props
     return (
       <Fragment>
         <h3 className='center'>Leaderboard</h3>
@@ -24,10 +23,9 @@ class Leaderboard extends Component {
   }
 }
 
-function mapStateToProps ({ users, authedUser }) {
+function mapStateToProps ({ users }) {
   return {
-    userIds: Object.keys(users),
-    authedUser
+    userIds: Object.keys(users)
   }
 }
 

@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import {
   Typography,
-  Card,
   CardContent
 } from '../../node_modules/@material-ui/core'
 
