@@ -46,6 +46,12 @@ li {
   cursor: pointer;
 }
 
+.large-avatar {
+  padding: 20px;
+  min-width: 100px;
+  min-height: 100px;
+}
+
 .or-text {
   padding: 20px;
 }
