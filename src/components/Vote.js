@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router'
 import {
   Card,
   CardHeader,
@@ -13,29 +12,17 @@ import User from './User'
 import { handleAnswerQuestion } from '../actions/shared'
 
 class Vote extends Component {
-  state = {
-    toHome: false
-  }
   handleOptionOne = () => {
     const { dispatch, question } = this.props
-    dispatch(handleAnswerQuestion(question.id, 'optionOne')).then(() =>
-      this.setState(() => ({ toHome: true }))
-    )
+    dispatch(handleAnswerQuestion(question.id, 'optionOne'))
   }
   handleOptionTwo = () => {
     const { dispatch, question } = this.props
-    dispatch(handleAnswerQuestion(question.id, 'optionTwo')).then(() =>
-      this.setState(() => ({ toHome: true }))
-    )
+    dispatch(handleAnswerQuestion(question.id, 'optionTwo'))
   }
   render () {
     const { question, user } = this.props
-    const { toHome } = this.state
     const { optionOne, optionTwo } = question
-    // Reference: https://tylermcginnis.com/react-router-programmatically-navigate/
-    if (toHome === true) {
-      return <Redirect to='/' />
-    }
     return (
       <Card className='card'>
         <User id={user.id} />
