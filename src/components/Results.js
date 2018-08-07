@@ -35,7 +35,9 @@ class Vote extends Component {
                 {votesOptionTwo} out of {totalVotes} votes
               </Typography>
               {optionTwo.votes.includes(authedUser)
-                ? <Card className='small-card'><Typography>Your answer!</Typography></Card>
+                ? <Card className='small-card'>
+                  <Typography color='secondary'>Your answer!</Typography>
+                </Card>
                 : null}
             </CardContent>
           </Card>

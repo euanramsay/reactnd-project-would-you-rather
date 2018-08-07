@@ -6,11 +6,18 @@ import Score from './Score'
 
 class Leaderboard extends Component {
   render () {
-    const { userIds } = this.props
+    const { users } = this.props
+    const userIds = Object.keys(users)
+    const sortedUserIds = userIds.sort(
+      (a, b) =>
+        Object.keys(users[b]['answers']).length -
+        Object.keys(users[a]['answers']).length
+    )
+
     return (
       <Fragment>
         <h3 className='center'>Leaderboard</h3>
-        {userIds.map(id => (
+        {sortedUserIds.map(id => (
           <Card key={id} id={id} className='small-card'>
             <CardContent>
               <User key={id} id={id} />
@@ -25,7 +32,7 @@ class Leaderboard extends Component {
 
 function mapStateToProps ({ users }) {
   return {
-    userIds: Object.keys(users)
+    users
   }
 }
 

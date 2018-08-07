@@ -10,8 +10,8 @@ class User extends Component {
   render () {
     const { name, avatarURL } = this.props.user
     return (
-      <Fragment className='user-card'>
-        <CardContent>
+      <Fragment>
+        <CardContent className='user-card'>
           <Avatar className='avatar' alt={name} src={avatarURL} />
           <Typography className='user-name'>{name}</Typography>
         </CardContent>
