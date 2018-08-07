@@ -10,6 +10,8 @@ class Vote extends Component {
     const votesOptionOne = optionOne.votes.length
     const votesOptionTwo = optionTwo.votes.length
     const totalVotes = votesOptionOne + votesOptionTwo
+    const percentageOptionOne = Math.floor(votesOptionOne / totalVotes * 100)
+    const percentageOptionTwo = Math.floor(votesOptionTwo / totalVotes * 100)
     return (
       <Card className='card'>
         <Typography>Asked by {name}</Typography>
@@ -20,6 +22,9 @@ class Vote extends Component {
             <CardContent>
               <Typography>
                 {votesOptionOne} out of {totalVotes} votes
+              </Typography>
+              <Typography variant="display1">
+                {percentageOptionOne} %
               </Typography>
               {optionOne.votes.includes(authedUser)
                 ? <Card className='small-card'>
@@ -33,6 +38,9 @@ class Vote extends Component {
             <CardContent>
               <Typography>
                 {votesOptionTwo} out of {totalVotes} votes
+              </Typography>
+              <Typography variant="display1">
+                {percentageOptionTwo} %
               </Typography>
               {optionTwo.votes.includes(authedUser)
                 ? <Card className='small-card'>
